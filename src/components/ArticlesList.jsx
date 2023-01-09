@@ -21,7 +21,7 @@ if (isLoading) {
 } 
 
 return (
-    <div className="Article_List">
+    <ul className="Article_List">
         {articles.map((article) => {
             
             return (
@@ -31,7 +31,7 @@ return (
                 />
             )
         })}
-    </div>
+    </ul>
   
 )
 

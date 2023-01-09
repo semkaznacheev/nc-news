@@ -2,7 +2,7 @@
 
 const ArticleCard = (props) => {
    const {title, topic, author, votes} = props;
-return ( <div className="Article_Card">
+return ( <li className="Article_Card">
     <p>Title: {title}</p>
     <p>Topic: {topic}</p>
     <p>Author: {author}</p>
@@ -13,7 +13,7 @@ return ( <div className="Article_Card">
         <button>
             Dislike
         </button>
-</div>
+</li>
 )
 }
 
