@@ -8,4 +8,26 @@
     align-items: center;
   }
 
+  .Header {
 
+    border: solid thin red;
+    padding-left: 50%;
+    padding-right: 50%;
+  }
+
+  .Nav {
+    border: solid thin black;
+    padding-left: 50%;
+    padding-right: 50%;
+  }
+
+  .Article_List {
+    border:rgb(221, 15, 15) solid thin;
+    
+}
+  
+  .Article_Card {
+    
+    border:rgb(128, 127, 127) solid thin;
+    
+  }
