@@ -6,7 +6,7 @@ const ArticleCard = (props) => {
    const { title, topic, author, votes, article_id } = props;
    const [votesChange, setVotesChange] = useState(0);
    
-   const [votesChangeDec, setVotesChangeDec] = useState(0);
+//    const [votesChangeDec, setVotesChangeDec] = useState(0);
    
  
    const handleVotesChangeInc = () => {
@@ -18,10 +18,10 @@ const ArticleCard = (props) => {
    }
 
    const handleVotesChangeDec = () => {
-    setVotesChangeDec((currentVotesChange) =>  currentVotesChange - 1);
+    setVotesChange((currentVotesChange) =>  currentVotesChange - 1);
     patchVotesChange(article_id, -1)
     .catch(() => {
-        setVotesChangeDec((currentVotesChange) => currentVotesChange + 1);
+        setVotesChange((currentVotesChange) => currentVotesChange + 1);
     })
    }
  
@@ -31,12 +31,12 @@ return ( <li className="Article_Card">
     <p><b>Title: </b> {title}</p>
     <p><b>Topic: </b> {topic}</p>
     <p><b>Author: </b>{author}</p>
-    <p><b>Current likes: </b> {votes + votesChange + votesChangeDec}</p>
-     <button disabled = {votesChange > 0} onClick={handleVotesChangeInc}>
+    <p><b>Current likes: </b> {votes + votesChange}</p>
+     <button disabled = {votesChange > 0}  onClick={handleVotesChangeInc}>
             Like
         </button>
         <br/>
-        <button disabled = {votesChangeDec < 0} onClick={handleVotesChangeDec}>
+        <button disabled = {votesChange < 0} onClick={handleVotesChangeDec}>
             Dislike
         </button>
         <br/>
