@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
+import { patchArtilceLikes } from "../utils/api";
 
 const ArticleCard = (props) => {
-   const {title, topic, author, votes, article_id} = props;
+   const { title, topic, author, votes, article_id } = props;
 return ( <li className="Article_Card">
     <p><b>Title: </b> {title}</p>
     <p><b>Topic: </b> {topic}</p>
