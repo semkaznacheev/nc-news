@@ -26,9 +26,8 @@ export const getCommentsById = (article_id) => {
     })
 }
 
-export const patchArtilceLikes = (article_id, votes) => {
-    return newsApi.patch(`/articles/${article_id}/comments`, {votes: {votes}})
-    .then((res) => {
-        return res.data;
-    })
+export const patchVotesChange = (article_id, votesChange) => {
+    return newsApi.patch(`/articles/${article_id}`, {inc_votes: votesChange})
+   
+
 }
