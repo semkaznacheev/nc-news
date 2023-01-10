@@ -34,11 +34,14 @@
     flex-wrap: wrap;
     width:100%;
     gap:10px;
-    margin-bottom: 10px;
     border:rgb(128, 127, 127) solid thin;
-    text-align: center;
   }
+  .dropdown {
 
+  }
+  .dropbtn {
+  
+  }
 
   .Article_List {
     border:rgb(221, 15, 15) solid thin;
@@ -162,8 +165,7 @@ flex-direction: column;
     
   }
 
-  .Disabled {
+
+  :disabled {
     background-color: grey;
   }
-
-  
