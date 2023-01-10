@@ -10,24 +10,73 @@
 
   .Header {
 
-    border: solid thin red;
-    padding-left: 50%;
-    padding-right: 50%;
+    position: relative;
+    width: 100%;
+    color:rgb(221, 5, 5);
+    box-sizing:border-box;
+    margin: 0 0 10px 0;
+    border:rgb(128, 127, 127) solid thin;
+  }
+  
+  .Header h1 {
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    width:100%;
+    text-align: center;
+    padding: 1rem 0;
+    margin: 0;
+    font-size: 3rem;
+    font-weight:bolder;
+  }
+  .Nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width:100%;
+    gap:10px;
+    margin-bottom: 10px;
+    border:rgb(128, 127, 127) solid thin;
   }
 
-  .Nav {
-    border: solid thin black;
-    padding-left: 50%;
-    padding-right: 50%;
-  }
 
   .Article_List {
     border:rgb(221, 15, 15) solid thin;
+    width:100%;
+    box-sizing: border-box;
+    padding:1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:60px;
+    justify-content: center;
     
 }
   
   .Article_Card {
     
     border:rgb(128, 127, 127) solid thin;
+    position: relative;
+    width :300px;
+    height:400px;
+    box-shadow: 0px 0px 10px 3px rgba(224, 43, 43, 0.575);
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: scroll;
+    padding: 30px;
+
     
+  }
+
+  .Readmore_button {
+    position: absolute;
+    bottom: 10px;
+    right:5px;
+    border-radius: 30px;
+    background-color: rgb(239, 6, 6);
+  }
+
+  .Link_read_more {
+    color: white;
+    font-weight: bold;
   }
