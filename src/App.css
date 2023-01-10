@@ -36,6 +36,7 @@
     gap:10px;
     margin-bottom: 10px;
     border:rgb(128, 127, 127) solid thin;
+    text-align: center;
   }
 
 
@@ -51,6 +52,32 @@
     justify-content: center;
     
 }
+
+.Single_Article {
+  border:rgb(221, 15, 15) solid thin;
+  width:100%;
+  box-sizing: border-box;
+  padding:1rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap:5px;
+  justify-content: center;
+  
+}
+   .Comments_List {
+  border:rgb(221, 15, 15) solid thin;
+  width:100%;
+  box-sizing: border-box;
+  padding:1rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap:60px;
+  justify-content: center;
+  
+}
+ 
   
   .Article_Card {
     
@@ -65,9 +92,51 @@
     overflow: scroll;
     padding: 30px;
 
-    
   }
 
+  .Comment_Card {
+    
+    border:rgb(128, 127, 127) solid thin;
+    position: relative;
+    width: 80%;
+    height:400px;
+    box-shadow: 0px 0px 10px 3px rgba(224, 43, 43, 0.575);
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: scroll;
+    padding: 30px;
+
+  }
+  .Add_Comment {
+width:fit-content;
+background-color: white;
+
+display: flex;
+flex-direction: column;
+}
+
+.Add_Comment fieldset {
+  border: rgb(8, 238, 20) solid thin;
+  font-size: 1rem;
+  padding-top: 1rem;
+
+}
+
+.Add_Comment fieldset legend {
+  font-size: 1rem;
+  background-color: rgb(10, 231, 106);
+  padding: 0 .5rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.Add_Comment fieldset input {
+  margin-top: 0;
+  margin-bottom: 0;
+  width:98%;
+}
   .Readmore_button {
     position: absolute;
     bottom: 10px;
@@ -79,4 +148,16 @@
   .Link_read_more {
     color: white;
     font-weight: bold;
+  }
+  button {
+   
+      background-color: #4CAF50; 
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+    
   }

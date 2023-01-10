@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getSingleArticle } from "../utils/api";
+import  Comments  from "./Comments.jsx";
+
 const SingleArticle = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [article, setArticle] = useState([])
@@ -19,7 +21,7 @@ const SingleArticle = () => {
         return <p className="Loading">Loading...</p>
     } 
     return (
-        <section>
+        <section className="Single_Article">
           <h2>{article.title}</h2>
           <p>Published: {article.created_at}</p>
           <p>Topic: {article.topic}</p>
@@ -27,7 +29,7 @@ const SingleArticle = () => {
           <p>Topic: {article.topic}</p>
           <p>Likes: {article.votes}</p>
           <p>Comments: {article.comment_count}</p>
-          <form>
+          <form className="Add_Comment">
         <fieldset>
           <legend>Add new comment </legend>
 
@@ -55,6 +57,7 @@ const SingleArticle = () => {
           <input type="submit" value="Submit"></input>
         </fieldset>
       </form>
+      <Comments article_id={article_id}/>
         </section>
         
     )
