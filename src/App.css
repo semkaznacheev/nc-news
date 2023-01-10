@@ -36,6 +36,7 @@
     gap:10px;
     margin-bottom: 10px;
     border:rgb(128, 127, 127) solid thin;
+    text-align: center;
   }
 
 
@@ -51,6 +52,19 @@
     justify-content: center;
     
 }
+   .Comments_List {
+  border:rgb(221, 15, 15) solid thin;
+  width:100%;
+  box-sizing: border-box;
+  padding:1rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap:60px;
+  justify-content: center;
+  
+}
+ 
   
   .Article_Card {
     
@@ -65,7 +79,21 @@
     overflow: scroll;
     padding: 30px;
 
+  }
+
+  .Comment_Card {
     
+    border:rgb(128, 127, 127) solid thin;
+    position: relative;
+    width: 80%;
+    height:400px;
+    box-shadow: 0px 0px 10px 3px rgba(224, 43, 43, 0.575);
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: scroll;
+    padding: 30px;
+
   }
 
   .Readmore_button {
@@ -79,4 +107,16 @@
   .Link_read_more {
     color: white;
     font-weight: bold;
+  }
+  button {
+   
+      background-color: #4CAF50; 
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+    
   }
