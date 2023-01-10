@@ -29,7 +29,7 @@ const SingleArticle = () => {
           <p>Topic: {article.topic}</p>
           <p>Likes: {article.votes}</p>
           <p>Comments: {article.comment_count}</p>
-          <form>
+          <form className="Add_Comment">
         <fieldset>
           <legend>Add new comment </legend>
 
