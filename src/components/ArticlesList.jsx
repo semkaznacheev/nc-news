@@ -1,7 +1,7 @@
 import {useState, useEffect} from "react";
 import { getArticles } from "../utils/api";
 import ArticleCard from "./ArticleCard";
-
+import image from "../img/pexels-cottonbro-studio-3951353.jpg";
 
 const ArticlesList = () => {
     
@@ -22,7 +22,7 @@ if (isLoading) {
 } 
 
 return (
-    <ul className="Article_List">
+    <ul className="Article_List"  style={{ backgroundImage:`url(${image})`}}>
         {articles.map((article) => {
             
             return (

@@ -23,12 +23,14 @@ const SingleArticle = () => {
     return (
         <section className="Single_Article">
           <h2>{article.title}</h2>
-          <p>Published: {article.created_at}</p>
-          <p>Topic: {article.topic}</p>
-          <p>Description: {article.body}</p>
-          <p>Topic: {article.topic}</p>
-          <p>Likes: {article.votes}</p>
-          <p>Comments: {article.comment_count}</p>
+          <br/>
+          <p><b>Published:  </b> {article.created_at}</p>
+          <p><b>Topic:  </b>{article.topic}</p>
+          <p><b>Description:  </b>{article.body}</p>
+          <p><b>Topic:  </b>{article.topic}</p>
+          <p><b>Likes:  </b>{article.votes}</p>
+          <p><b>Comments:  </b>{article.comment_count}</p>
+          <br/>
           
       <Comments article_id={article_id}/>
         </section>

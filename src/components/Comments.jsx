@@ -69,7 +69,7 @@ return (
         <fieldset>
           <legend>Add new comment </legend>
 
-          <label htmlFor="username">Username :</label>
+          <label htmlFor="username">Username </label>
           <input
             type="text"
             id="username"
@@ -95,7 +95,7 @@ return (
           <br />
           <br />
 
-          <input type="submit" value="Submit"></input>
+          <input className="Add_Comment_Button" type="submit" value="Submit"></input>
         </fieldset>
       </form>
 <ul className="Comments_List">
