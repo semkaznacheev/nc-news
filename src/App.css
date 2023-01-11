@@ -169,3 +169,8 @@ flex-direction: column;
   :disabled {
     background-color: grey;
   }
+
+  #err {
+    color: red;
+    font-weight: bolder;
+  }

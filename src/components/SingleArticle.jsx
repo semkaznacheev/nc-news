@@ -29,34 +29,7 @@ const SingleArticle = () => {
           <p>Topic: {article.topic}</p>
           <p>Likes: {article.votes}</p>
           <p>Comments: {article.comment_count}</p>
-          <form className="Add_Comment">
-        <fieldset>
-          <legend>Add new comment </legend>
-
-          <label htmlFor="Your name">Your Name :</label>
-          <input
-            type="text"
-            id="your_name"
-            name="your_name"
-          ></input>
-          <br />
-          <br />
-
-          <label htmlFor="description">Write you comment here:</label>
-          <br />
-          <textarea
-            name="comment_input"
-            id="comment_input"
-            rows="4"
-            cols="40"
-          ></textarea>
-          <br />
-          <br />
-          <br />
-
-          <input type="submit" value="Submit"></input>
-        </fieldset>
-      </form>
+          
       <Comments article_id={article_id}/>
         </section>
         

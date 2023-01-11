@@ -6,7 +6,6 @@ const ArticleCard = (props) => {
    const { title, topic, author, votes, article_id } = props;
    const [votesChange, setVotesChange] = useState(0);
    
-//    const [votesChangeDec, setVotesChangeDec] = useState(0);
    
  
    const handleVotesChangeInc = () => {
