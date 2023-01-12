@@ -105,7 +105,25 @@
     flex-wrap: wrap;
     gap:60px;
     justify-content: center;
-    
+}
+.Sort_By_Section {
+  background-color:#f4b41d;
+}
+.Sort_By_1, .Sort_By_2 {
+  background-color:#f4b41d;
+  border-radius: 10%;
+  color:black;
+  border-color: #c09ab7;
+  margin-right: 20px;
+}
+.Sort_By_1 {
+  padding-left: 10px;
+}
+.Sort_By_Section label {
+  color: black;
+  font-size: smaller;
+  font-weight: lighter;
+  padding: 10px;
 }
 /* ----  ArticleCard Container -----   */
 

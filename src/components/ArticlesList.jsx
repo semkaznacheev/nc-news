@@ -29,24 +29,24 @@ if (isLoading) {
 
 return (
     <main>
-        <section>
-           <select value={sortBy} onChange={(e) => {
+        <section className="Sort_By_Section">
+        <label for="sort_by">sort by:   </label>
+           <select id="sort_by" className="Sort_By_1" value={sortBy} onChange={(e) => {
                 setSortBy(e.target.value) 
                 }}>
                 <option value="created_at"> Date </option>
                 <option value="votes"> Likes Quantity</option>
                 <option value="comment_count" > Comments Quantity</option> 
             </select>
-        </section>
-        <section>
-           <select value={order} onChange={(e) => {
+            <label for="order">order:  </label>
+           <select id="order" className="Sort_By_2" value={order} onChange={(e) => {
                 setOrder(e.target.value) 
                 }}>
                 <option value="asc"> Ascending </option>
                 <option value="desc"> Descending </option>
             </select>
         </section>
-        
+   
     
  
     <ul className="Article_List"  style={{ backgroundImage:`url(${image})`}}>

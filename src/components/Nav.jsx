@@ -24,17 +24,6 @@ const Nav = () => {
                 </button>
         )
       })}
-      
-       <div className="Button_Box">
-       <button className="Nav_Buttons" >Dropdown</button>
-       <div className="dropdown-content">
-      </div>
-      </div>
-      <div className="Button_Box">
-      <button className="Nav_Buttons">Dropdown</button>
-      <div className="dropdown-content">
-      </div>
-      </div>
     </nav>
 
     )
