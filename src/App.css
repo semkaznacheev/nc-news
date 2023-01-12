@@ -259,10 +259,7 @@
   @media only screen and (max-width: 768px) {
     .Article_list, .Comments_List {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
-      width: 100%;
+      justify-content: space-between;
     }
-    
   }
   
