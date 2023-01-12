@@ -5,12 +5,9 @@ const newsApi = axios.create({
     baseURL: "https://nc-news-qcna.onrender.com/api",
 })
 
-export const getArticles = (topic) => {
-    // if (topic === '') return newsApi.get("/articles").then((res) => {
-    //     return res.data;
-    // })
+export const getArticles = (topic, sortBy, order) => {
     return newsApi.get("/articles", { 
-        params: { topic: topic },
+        params: { topic: topic, sort_by: sortBy, order: order},
     })
     .then((res) => {
         return res.data
