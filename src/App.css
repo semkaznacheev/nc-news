@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+
 /* ----  App Container -----   */
 
 * {
@@ -231,3 +233,4 @@
     color: red;
     font-weight: bolder;
   }
+  

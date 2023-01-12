@@ -8,7 +8,6 @@ const Comments = (props) => {
 const {article_id} = props;
 const [isLoading, setIsLoading] = useState(true);
 const [comments, setComments] = useState([]);
-const [username, setUserName] = useState('');
 const [body, setBody] = useState('');
 const [comment, setComment] = useState({});
 const [err, setErr] = useState(null);
@@ -19,13 +18,14 @@ const submitHandler = (event) => {
   
     setComment({
         comment_id: (Date.now()),
-        author: username,
+        author: "grumpy19",
         created_at: (new Date()).toString(),
         body: body,
         votes: 0
     })
+    setBody('')
    
-    postComment(article_id, username, body)
+    postComment(article_id, "grumpy19", body)
     .then(() => {
         
         alert("Your comment was posted. Congrats!")
@@ -33,10 +33,6 @@ const submitHandler = (event) => {
     .catch(() => {
         setErr("Somethimg went wrong. Check your username and fill out all fields")
     })
-}
-
-const usernameHandler = (event) => {
-    setUserName(event.target.value)
 }
 
 const bodyHandler = (event) => {
@@ -47,7 +43,7 @@ useEffect(() => {
     
     setIsLoading(true);
     getCommentsById(article_id).then(({comments}) => {
-        if (Object.keys(comment).length === 0) {
+        if (Object.keys(comment).length === 0 || comment.body === '') {
             setComments(comments)
         } else if (err !== null) {
             setComments(comments)
@@ -74,8 +70,8 @@ return (
             type="text"
             id="username"
             name="username"
-            value={username}
-            onChange={usernameHandler}
+            value="grumpy19"
+            readOnly
           ></input>
           <br />
           <br />
@@ -89,6 +85,7 @@ return (
             cols="40"
             value={body}
             onChange={bodyHandler}
+            required
           ></textarea>
           <br />
           <p id="err"> {err !== null ? err : ''}</p>
