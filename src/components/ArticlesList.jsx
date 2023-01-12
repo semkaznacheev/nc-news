@@ -2,19 +2,24 @@ import {useState, useEffect} from "react";
 import { getArticles } from "../utils/api";
 import ArticleCard from "./ArticleCard";
 import image from "../img/pexels-cottonbro-studio-3951353.jpg";
+import { useParams } from "react-router-dom";
+
+
 
 const ArticlesList = () => {
     
 const [isLoading, setIsLoading] = useState(true);
-const [articles, setArticles] = useState([])
+const [articles, setArticles] = useState([]);
+
+const { topic } = useParams();
 
 useEffect(() => {
     setIsLoading(true);
-    getArticles().then(({articles}) => {
+    getArticles(topic).then(({articles}) => {
         setArticles(articles)
         setIsLoading(false)
     })
-}, []);
+}, [topic]);
 
 
 if (isLoading) {
@@ -22,6 +27,8 @@ if (isLoading) {
 } 
 
 return (
+    
+ 
     <ul className="Article_List"  style={{ backgroundImage:`url(${image})`}}>
         {articles.map((article) => {
             
@@ -33,6 +40,7 @@ return (
             )
         })}
     </ul>
+   
   
 )
 
