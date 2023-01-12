@@ -13,6 +13,7 @@ function App() {
       <Header/>
       <Nav/>
       <Routes>
+        <Route path="/" element={<ArticlesList />}> </Route>
         <Route path="/articles" element={<ArticlesList />}> </Route>
         <Route path={`/articles/article/:article_id`} element={<SingleArticle/>} />
       </Routes>
