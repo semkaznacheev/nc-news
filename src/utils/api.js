@@ -6,9 +6,9 @@ const newsApi = axios.create({
 })
 
 export const getArticles = (topic) => {
-    if (topic === '') return newsApi.get("/articles").then((res) => {
-        return res.data;
-    })
+    // if (topic === '') return newsApi.get("/articles").then((res) => {
+    //     return res.data;
+    // })
     return newsApi.get("/articles", { 
         params: { topic: topic },
     })
@@ -47,10 +47,5 @@ export const postComment = (article_id, username, body) => {
     body: body})
 }
 
-// export const getArticlesByQueries = (topic) => {
-//     return newsApi.get('/articles', { params: {slug: topic}})
-//     .then((res) => {
-//         return res.data;
-// })
-// }
+
 
