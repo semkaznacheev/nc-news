@@ -48,7 +48,7 @@ if (isLoading) {
 } 
 
 return (
-    <section>
+    <section className='Comments_Page'>
     <form className="Add_Comment" onSubmit={submitHandler}>
         <fieldset>
           <legend>Add new comment </legend>
