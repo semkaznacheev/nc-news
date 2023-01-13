@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import { getSingleArticle } from "../utils/api";
 import  Comments  from "./Comments.jsx";
 
-const SingleArticle = () => {
+const SingleArticle = (props) => {
+    const {user} = props;
     const [isLoading, setIsLoading] = useState(true);
     const [article, setArticle] = useState([])
 
@@ -32,7 +33,7 @@ const SingleArticle = () => {
           <p><b>Comments:  </b>{article.comment_count}</p>
           <br/>
           
-      <Comments article_id={article_id}/>
+      <Comments article_id={article_id} user={user}/>
         </section>
         
     )

@@ -30,7 +30,7 @@
     margin: 0;
     padding: 0;
     background-color: #fafcfc;
-    width: 100%;
+    width: 100vw;
     color: #c15064;
   }
   .Header_Link {
@@ -73,7 +73,7 @@
     margin: 0;
     padding: 0;
     background-color: #c15064;
-    width: 100%; 
+    width: 100vw; 
     height: 10%;
     display: flex;
     flex-direction: row;
@@ -275,9 +275,14 @@
   }
 
   @media only screen and (max-width: 768px) {
-    .Article_list, .Comments_List {
+    .Article_list, .Comments_List .Comments_Page{
       display: flex;
       justify-content: space-between;
+      flex-direction: column;
+    }
+    .Add_Comment  {
+      width: 80vw;
+      height: 50vh;
     }
   }
   

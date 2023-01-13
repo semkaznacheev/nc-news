@@ -5,10 +5,12 @@ import { useState, useEffect } from "react";
 import CommentCard from "./CommentCard";
 
 const Comments = (props) => {
-const {article_id} = props;
+const {article_id, user} = props;
 const [isLoading, setIsLoading] = useState(true);
 const [comments, setComments] = useState([]);
 const [body, setBody] = useState('');
+const [deletedComment, setDeletedComment] = useState(false);
+
 const [comment, setComment] = useState({});
 const [err, setErr] = useState(null);
 
@@ -16,18 +18,11 @@ const submitHandler = (event) => {
    setErr(null)
     event.preventDefault();
   
-    setComment({
-        comment_id: (Date.now()),
-        author: "grumpy19",
-        created_at: (new Date()).toString(),
-        body: body,
-        votes: 0
-    })
     setBody('')
    
-    postComment(article_id, "grumpy19", body)
-    .then(() => {
-        
+    postComment(article_id, user, body)
+    .then((res) => {
+        setComment(res.data.comment)
         alert("Your comment was posted. Congrats!")
     })
     .catch(() => {
@@ -40,19 +35,12 @@ const bodyHandler = (event) => {
 }
 
 useEffect(() => {
-    
     setIsLoading(true);
     getCommentsById(article_id).then(({comments}) => {
-        if (Object.keys(comment).length === 0 || comment.body === '') {
-            setComments(comments)
-        } else if (err !== null) {
-            setComments(comments)
-        } else {
-            setComments([comment, ...comments])
-        }
+        setComments(comments)
         setIsLoading(false);
     })
-}, [article_id, comment, err]);
+}, [article_id, comment, err, deletedComment]);
 
 
 if (isLoading) {
@@ -60,7 +48,7 @@ if (isLoading) {
 } 
 
 return (
-    <section>
+    <section className='Comments_Page'>
     <form className="Add_Comment" onSubmit={submitHandler}>
         <fieldset>
           <legend>Add new comment </legend>
@@ -70,7 +58,7 @@ return (
             type="text"
             id="username"
             name="username"
-            value="grumpy19"
+            value={user}
             readOnly
           ></input>
           <br />
@@ -99,7 +87,7 @@ return (
         
         {comments.map((comment) => {
             return (
-                <CommentCard key={comment.comment_id} {...comment}/>
+                <CommentCard key={comment.comment_id} {...comment} setComment={setComment} user={user} setDeletedComment={setDeletedComment}/>
             )
      
         })}
