@@ -8,15 +8,16 @@ import { Routes, Route } from "react-router-dom";
 import {useState } from "react";
 
 function App() {
+  const [user, setUser] = useState("grumpy19")
   return (
     <div className="App">
-      <Header/>
-      <Nav/>
+      <Header user={user}/>
+      <Nav />
       <Routes>
         <Route path="/" element={<ArticlesList />}> </Route>
         <Route path="/articles" element={<ArticlesList />}> </Route>
         <Route path="/articles/topics/:topic" element={<ArticlesList />}> </Route>
-        <Route path={`/articles/article/:article_id`} element={<SingleArticle/>} />
+        <Route path={`/articles/article/:article_id`} element={<SingleArticle user={user}/>} />
       </Routes>
     </div>
   );

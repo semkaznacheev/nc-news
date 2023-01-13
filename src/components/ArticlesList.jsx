@@ -30,7 +30,7 @@ if (isLoading) {
 return (
     <main>
         <section className="Sort_By_Section">
-        <label for="sort_by">sort by:   </label>
+        <label htmlFor="sort_by">sort by:   </label>
            <select id="sort_by" className="Sort_By_1" value={sortBy} onChange={(e) => {
                 setSortBy(e.target.value) 
                 }}>
@@ -38,7 +38,7 @@ return (
                 <option value="votes"> Likes Quantity</option>
                 <option value="comment_count" > Comments Quantity</option> 
             </select>
-            <label for="order">order:  </label>
+            <label htmlFor="order">order:  </label>
            <select id="order" className="Sort_By_2" value={order} onChange={(e) => {
                 setOrder(e.target.value) 
                 }}>
