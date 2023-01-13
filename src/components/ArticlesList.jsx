@@ -11,7 +11,8 @@ const ArticlesList = () => {
 const [isLoading, setIsLoading] = useState(true);
 const [articles, setArticles] = useState([]);
 const [sortBy, setSortBy] = useState('created_at');
-const [order, setOrder] = useState('asc')
+const [order, setOrder] = useState('asc');
+const [err, setErr] = useState(null);
 
 const { topic } = useParams();
 
@@ -21,11 +22,33 @@ useEffect(() => {
         setArticles(articles)
         setIsLoading(false)
     })
+    .catch((err) => {
+        if (err.response.data.msg === "not found") {
+            
+            setErr("Articles not found. Try to search for existant topic.")
+            setIsLoading(false)
+        } else {
+            setErr("Something went wrong. Try again later.")
+            setIsLoading(false)
+        }
+       
+    })
 }, [topic, sortBy, order]);
 
 if (isLoading) {
-    return <p className="Loading">Loading...</p>
+    return (
+        <main>
+            <p className="Loading">Loading...</p>
+        </main>
+    )
 } 
+if (err) {
+    return (
+        <main>
+            <p>{err}</p>
+        </main>
+    )
+}
 
 return (
     <main>

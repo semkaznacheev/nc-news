@@ -18,6 +18,7 @@ function App() {
         <Route path="/articles" element={<ArticlesList />}> </Route>
         <Route path="/articles/topics/:topic" element={<ArticlesList />}> </Route>
         <Route path={`/articles/article/:article_id`} element={<SingleArticle user={user}/>} />
+        <Route path="/*" element={<p>404 - Page not found. Sorry. </p>}> </Route>
       </Routes>
     </div>
   );
