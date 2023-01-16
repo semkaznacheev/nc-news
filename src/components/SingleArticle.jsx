@@ -6,7 +6,8 @@ import  Comments  from "./Comments.jsx";
 const SingleArticle = (props) => {
     const {user} = props;
     const [isLoading, setIsLoading] = useState(true);
-    const [article, setArticle] = useState([])
+    const [article, setArticle] = useState([]);
+    const [err, setErr] = useState(null);
 
     const {article_id} = useParams();
     useEffect(() => {
@@ -15,14 +16,33 @@ const SingleArticle = (props) => {
             setArticle(article)
             setIsLoading(false)
         })
-    }, [article_id]);
+        .catch(() => {
+            setErr("404 - Article not found")
+            setIsLoading(false);
+
+        })
+    }, [article_id])
+ 
     
     
     if (isLoading) {
-        return <p className="Loading">Loading...</p>
+        return (
+            <div className="Load_Error_Container">
+                <p className="Loading">Loading...</p>
+            </div>
+        )
     } 
+    if (err) {
+        return (
+            <div className="Load_Error_Container">
+                <p className="Error">{err}</p>
+            </div>
+        )
+    }
     return (
         <section className="Single_Article">
+            <br/>
+            <br/>
           <h2>{article.title}</h2>
           <br/>
           <p><b>Published:  </b> {article.created_at}</p>

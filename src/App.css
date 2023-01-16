@@ -1,5 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
 
+
+
+/* ----  Loading and Error Container -----   */
+
+.Load_Error_Container {
+  width: 80vw;
+  height:30vh;  
+  display: table; 
+}
+
+.Loading, .Error {
+  text-align:center; 
+  vertical-align: middle;
+  display: table-cell; 
+  font-size: x-large;
+  color:#c15064
+}
 /* ----  App Container -----   */
 
 * {
@@ -78,6 +95,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
    
   }
   .Nav_Buttons {
@@ -280,9 +298,54 @@
       justify-content: space-between;
       flex-direction: column;
     }
-    .Add_Comment  {
-      width: 80vw;
-      height: 50vh;
-    }
+    
+    .Add_Comment {
+      width: 90vw;
+      background-color: #fafcfc;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+    
+      }
+      
+      .Add_Comment fieldset {
+        width: 80vw;
+      }
+      
+      
+      .Add_Comment fieldset input {
+        width: 50vw;
+      }
+
+      textarea {
+        width: 85vw;
+      }
+    
+      .Add_Comment_Button {
+       width: 50vw;
+       height: auto;
+      }
+      .Comment_Card {
+        width: 90vw;
+      }
+      .Nav {
+        display: inline-table;
+        text-align: center;
+      }
+      .Sort_By_Section {
+        display: inline-flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: stretch;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        padding-left: 0.5em;
+      }
+      
+      .Single_Article {
+        display: inline;
+        padding: 0.5em;
+      }
   }
   
