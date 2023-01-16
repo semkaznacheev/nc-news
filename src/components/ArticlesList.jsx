@@ -17,6 +17,7 @@ const [err, setErr] = useState(null);
 const { topic } = useParams();
 
 useEffect(() => {
+    setErr(null)
     setIsLoading(true);
     getArticles(topic, sortBy, order).then(({articles}) => {
         setArticles(articles)
@@ -37,16 +38,16 @@ useEffect(() => {
 
 if (isLoading) {
     return (
-        <main>
+        <div className="Load_Error_Container">
             <p className="Loading">Loading...</p>
-        </main>
+        </div>
     )
 } 
 if (err) {
     return (
-        <main>
-            <p>{err}</p>
-        </main>
+        <div className="Load_Error_Container">
+            <p className="Error">{err}</p>
+        </div>
     )
 }
 

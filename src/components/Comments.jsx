@@ -4,6 +4,7 @@ import { postComment } from "../utils/api";
 import { useState, useEffect } from "react";
 import CommentCard from "./CommentCard";
 
+
 const Comments = (props) => {
 const {article_id, user} = props;
 const [isLoading, setIsLoading] = useState(true);
@@ -44,7 +45,12 @@ useEffect(() => {
 
 
 if (isLoading) {
-    return <p className="Loading">Loading...</p>
+    return (
+        <div className="Load_Error_Container">
+            <p className="Loading">Loading...</p>
+        </div>
+
+        )    
 } 
 
 return (

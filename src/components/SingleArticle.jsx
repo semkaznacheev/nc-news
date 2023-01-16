@@ -27,20 +27,22 @@ const SingleArticle = (props) => {
     
     if (isLoading) {
         return (
-            <main>
+            <div className="Load_Error_Container">
                 <p className="Loading">Loading...</p>
-            </main>
+            </div>
         )
     } 
     if (err) {
         return (
-            <main>
-                <p>{err}</p>
-            </main>
+            <div className="Load_Error_Container">
+                <p className="Error">{err}</p>
+            </div>
         )
     }
     return (
         <section className="Single_Article">
+            <br/>
+            <br/>
           <h2>{article.title}</h2>
           <br/>
           <p><b>Published:  </b> {article.created_at}</p>
