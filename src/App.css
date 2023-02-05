@@ -36,13 +36,6 @@
   }
 /* ----  Header Container -----   */
   .Header {
-
-    /* position: relative;
-    width: 100%;
-    color:rgb(221, 5, 5);
-    box-sizing:border-box;
-    margin: 0 0 10px 0;
-    border:rgb(128, 127, 127) solid thin; */
   
     margin: 0;
     padding: 0;
@@ -216,10 +209,8 @@
   }
   
   .Add_Comment fieldset {
-    /* border: rgb(8, 238, 20) solid thin; */
     border-radius: 5%;
     font-size: 1rem;
-    /* padding-top: 1rem; */
     padding: 1rem;
   }
   
@@ -292,6 +283,9 @@
     font-weight: bolder;
   }
 
+     /* ----  For mobiles & tablets -----   */
+
+     
   @media only screen and (max-width: 768px) {
     .Article_list, .Comments_List .Comments_Page{
       display: flex;
