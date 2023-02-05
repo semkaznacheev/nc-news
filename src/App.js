@@ -9,6 +9,7 @@ import {useState } from "react";
 
 function App() {
   const [user, setUser] = useState("grumpy19")
+  setUser(grumpy19)
   return (
     <div className="App">
       <Header user={user}/>
