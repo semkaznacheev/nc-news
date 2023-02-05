@@ -8,8 +8,8 @@ import { Routes, Route } from "react-router-dom";
 import {useState } from "react";
 
 function App() {
-  const [user, setUser] = useState("")
-  setUser('grumpy19')
+  const [user, setUser] = useState("grumpy19")
+ 
   return (
     <div className="App">
       <Header user={user}/>
